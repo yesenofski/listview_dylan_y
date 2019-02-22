@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App7.Page1">
+    <ContentPage.Content>
+        <ListView x:Name="ListView" RowHeight="60">
+            <ListView.ItemTemplate >
+                <DataTemplate >
+
+                    <ViewCell >
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete" Command="{Binding BindingContext.DeleteItemCommand, Source={x:Reference nameOfList}}" CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="Beige">
+                            <StackLayout Orientation="Vertical" >
+                                <Label Text="{Binding Dish}" FontSize="32" AbsoluteLayout.LayoutBounds=" 0.25, 0.25, 400, 40"/>
+                                <Label Text = "{Binding Recipe}" AbsoluteLayout.LayoutBounds="50, 35, 200, 25"/>
+                            </StackLayout>
+                            <Image Source="{Binding Image}" HorizontalOptions="End"  AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                        </StackLayout> 
+                         
+                    </ViewCell>
+
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+            
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
